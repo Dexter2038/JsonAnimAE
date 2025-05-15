@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <title>Lottie Animation</title>
-    <!-- Load Lottie-Web 5.12.2 with proper SRI and CORS -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"
       integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg=="
@@ -11,10 +10,14 @@
       referrerpolicy="no-referrer"
     ></script>
     <style>
-      body,
-      html {
+      /* Full‑screen black background + centered animation */
+      html,
+      body {
         margin: 0;
+        padding: 0;
+        width: 100%;
         height: 100%;
+        background-color: black;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -28,7 +31,6 @@
   <body>
     <div id="anim"></div>
     <script>
-      // Initialize and play the animation
       lottie.loadAnimation({
         container: document.getElementById("anim"),
         renderer: "svg",
