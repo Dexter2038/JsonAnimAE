@@ -2,11 +2,42 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test</title>
+    <title>Lottie Animation</title>
+    <!-- 1. Lottie‑Web (Bodymovin) CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"
+      integrity="sha384-xyz"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* Ensure no default margins and center the animation */
+      body,
+      html {
+        margin: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #anim {
+        width: 300px;
+        height: 300px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Test</h1>
-    <h1 title="2">Test</h1>
+    <!-- 2. Container for your animation -->
+    <div id="anim"></div>
+
+    <!-- 3. Load and play the JSON animation -->
+    <script>
+      lottie.loadAnimation({
+        container: document.getElementById("anim"), // the dom element
+        renderer: "svg", // use 'svg' for scalability
+        loop: true, // repeat forever
+        autoplay: true, // start automatically
+        path: "anim.json", // relative path to your exported JSON
+      });
+    </script>
   </body>
 </html>
