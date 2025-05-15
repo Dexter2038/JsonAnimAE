@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <title>Lottie Animation</title>
-    <!-- 1. Lottie‑Web (Bodymovin) CDN -->
+    <!-- Load Lottie-Web 5.12.2 with proper SRI and CORS -->
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"
-      integrity="sha384-xyz"
+      src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"
+      integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg=="
       crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     ></script>
     <style>
-      /* Ensure no default margins and center the animation */
       body,
       html {
         margin: 0;
@@ -26,17 +26,15 @@
     </style>
   </head>
   <body>
-    <!-- 2. Container for your animation -->
     <div id="anim"></div>
-
-    <!-- 3. Load and play the JSON animation -->
     <script>
+      // Initialize and play the animation
       lottie.loadAnimation({
-        container: document.getElementById("anim"), // the dom element
-        renderer: "svg", // use 'svg' for scalability
-        loop: true, // repeat forever
-        autoplay: true, // start automatically
-        path: "anim.json", // relative path to your exported JSON
+        container: document.getElementById("anim"),
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: "anim.json",
       });
     </script>
   </body>
